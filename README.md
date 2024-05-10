@@ -1,4 +1,8 @@
 # issueTracker
+Description:
+    
+    nodejs + ejs  application to track issues/bugs for a project.
+
 Go live on:
 
     https://issuetracker-2-u7ph.onrender.com/ 
