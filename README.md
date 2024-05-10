@@ -9,7 +9,7 @@ Run command:
     node index.js
     
 
-
+Folder structure:
 
 
     assets
