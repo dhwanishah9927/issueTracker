@@ -1,5 +1,9 @@
 # issueTracker
-go live on https://github.com/dhwanishah9927/issueTracker.git
+run command:
+    npm install
+    node index.js
+    
+Go live on https://github.com/dhwanishah9927/issueTracker.git
 
 
 
