@@ -1,7 +1,7 @@
 # issueTracker
 Go live on:
 
-    https://github.com/dhwanishah9927/issueTracker.git
+    https://issuetracker-2-u7ph.onrender.com/ 
 
 Run command:
 
