@@ -41,7 +41,6 @@ Folder structure:
         layout.ejs
         projectdetailsPage.ejs
 
-    .gitignore
     index.js
     package-lock.json
     package.json
