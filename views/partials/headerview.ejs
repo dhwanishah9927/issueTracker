@@ -1,0 +1,12 @@
+<!-- Displays a "Create Project" button on the project page and if the project is open. display a "Create Issue" button -->
+<nav class="navbar navbar-expand-sm" style="background-color: orange;">
+  <div class="container-fluid">
+    <!-- Logo Image -->
+    <a class="navbar-brand ms-6" href="/">
+      <img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/website-bug-tracking-1819337-1544052.png" alt="Logo" style="height: 60px; width: auto; margin-right: 10px;">
+      <span style="font-weight: bolder; color: #007bff; text-decoration: none; font-size: 20px; border: 2px solid #007bff; border-radius: 5px; padding: 5px 10px;"> Issue Tracker App </span>
+    </a>
+    <%- title === "Project Page" ? include('issueForm') : include('projectForm') %>
+  </div>
+</nav>
+

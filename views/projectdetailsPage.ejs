@@ -1,0 +1,13 @@
+<div class="w-100 border border-white border-1 p-3 m-auto " style="background-color: rgb(37, 130, 130);">
+  <h1 class="display-5 card-title text-dark bg-info mb-1">
+    Name of the Project : <%= project.name %>
+  </h1>
+  <h6 class="display-6 card-title bg-info text-muted">
+    Description : <%= project.description %>
+  </h6>
+  <h6 class="display-6 card-title bg-info text-muted">
+    Author : <%= project.author %>
+  </h6>
+  <%-include('./partials/allFilterSearchIssues'); %>
+</div>
+

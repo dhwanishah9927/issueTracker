@@ -1,0 +1,102 @@
+<div class="d-flex flex-column justify-content-end">
+  <!-- Logo Image as Button -->
+  <a href="#" 
+     class="btn btn-primary"
+     style="margin: auto;" 
+     data-bs-toggle="modal" 
+     data-bs-target="#newModal"
+     style="margin-bottom: 10px;"
+  >
+    <img src="https://i.ytimg.com/vi/CCh7CqxGUz4/maxresdefault.jpg" alt="Logo" style="height: 60px; width: auto;">
+  </a>
+
+  <!-- Create New Project Button -->
+  <button
+    type="button"
+    class="btn btn-primary"
+    style="margin: auto;"
+    data-bs-toggle="modal"
+    data-bs-target="#newModal"
+  >
+    Create New Project
+  </button>
+</div>
+
+
+
+
+<!-- New project modal -->
+<div
+  class="modal fade"
+  id="newModal"
+  aria-labelledby="newModalLabel"
+  tabindex="-1"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header bg-dark text-light">
+        <h5 class="modal-title" id="newModalLabel">Create your new project</h5>
+        <button
+          type="button"
+          class="btn-close btn-close-white"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <form
+        class="border border-white border-3"
+        action="/project/create"
+        method="POST"
+      >
+        <div class="row mb-3" style="margin: auto;">
+          <label for="labelforprojectname" class="col-sm-4 col-form-label">Name</label>
+          <div class="col-sm-8">
+            <input
+              type="text"
+              name="name"
+              placeholder="Name of the project"
+              required
+              class="form-control"
+              id="labelforprojectname"
+            />
+          </div>
+        </div>
+        <div class="row mb-3" style="margin: auto;">
+          <label for="labelfordescription" class="col-sm-4 col-form-label"
+            >Description</label
+          >
+          <div class="col-sm-8">
+            <textarea
+              name="description"
+              placeholder="Describe your project Here..."
+              required
+              class="form-control"
+              id="labelfordescription"
+              >
+          </textarea>
+          </div>
+        </div>
+        
+        <div class="row mb-3" style="margin: auto;">
+          <label for="labelforauthor" class="col-sm-4 col-form-label"> Author </label>
+          <div class="col-sm-8">
+            <input 
+            type="text" 
+            name="author" 
+            placeholder="Author" 
+            required 
+            class="form-control" 
+            id="labelforauthor"/>
+          </div>
+        </div>
+
+        <div class="modal-footer bg-dark text-light">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"> Close </button>
+          <button type="submit" class="btn btn-primary">Create project</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,181 @@
+<!-- a form to create issues in the project -->
+<!-- Button -->
+<div class="d-flex justify-content-end">
+  <button
+    type="button"
+    class="btn btn-danger"
+    style="margin: auto;"
+    data-bs-toggle="modal"
+    data-bs-target="#newModal"
+  >
+    Create Issue
+  </button>
+</div>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="newModal"
+  tabindex="-1"
+  aria-labelledby="newModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header bg-dark text-light">
+        <h5 class="modal-title" id="newModalLabel">Create an Issue</h5>
+        <button
+          type="button"
+          class="btn-close btn-close-white"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <form
+        class="p-4 border border-secondary border-2 rounded"
+        action="/project/<%=project._id%>"
+        method="POST"
+      >
+        <div class="row mb-3">
+          <label for="titlelabel" class="col-sm-4 col-form-label text-dark">Title</label>
+          <div class="col-sm-8">
+            <input
+              type="text"
+              name="title"
+              placeholder="Title"
+              required
+              class="form-control"
+              id="titlelabel"
+            />
+          </div>
+        </div>
+        <div class="row mb-3">
+          <label for="descriptionlabel" class="col-sm-4 col-form-label text-dark"
+            >Description</label
+          >
+          <div class="col-sm-8">
+            <textarea
+              name="description"
+              placeholder="Describe your Issue Here..."
+              required
+              class="form-control"
+              id="descriptionlabel"
+              style="height: 100px"
+            ></textarea>
+          </div>
+        </div>
+
+        <% if (project.labels.length>0) { %>
+        <div class="dropdown">
+          <button
+            class="btn btn-primary dropdown-toggle"
+            type="button"
+            id="dropdownMenuButton1"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Labels
+          </button>
+
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <% for( let label of project.labels) { %>
+            <li><a class="dropdown-item" href="#"><%= label %></a></li>
+            <% } %>
+          </ul>
+        </div>
+        <% } %>
+        <div class="row mb-3">
+          <label for="labels" class="col-sm-4 col-form-label text-dark">Add Bug Labels</label>
+
+          <div class="col-sm-8">
+            <!-- Checkbox options -->
+            <input
+              class="form-check-input"
+              name="labels"
+              type="checkbox"
+              value="Functional errors"
+              id="functionalerror"
+            />
+            <label class="form-check-label" for="functionalerror"> Functional Errors </label><br />
+            <input
+              name="labels"
+              class="form-check-input"
+              type="checkbox"
+              value="Calculation errors"
+              id="calculationerror"
+            />
+            <label class="form-check-label" for="calculationerror">
+              Calculation Errors </label>
+              <br />
+              <input
+              name="labels"
+              class="form-check-input"
+              type="checkbox"
+              value="Typos"
+              id="typos"
+            />
+            <label class="form-check-label" for="typos">
+              Typos </label> <br />
+              <input
+              name="labels"
+              class="form-check-input"
+              type="checkbox"
+              value="Missing commands"
+              id="missingcommand"
+            />
+            <label class="form-check-label" for="missingcommand">
+              Missing Commands </label>
+              <br />
+              <input
+              name="labels"
+              class="form-check-input"
+              type="checkbox"
+              value="Enhancement"
+              id="enhancement"
+            />
+            <label class="form-check-label" for="enhancement"> Enhancement </label><br/>
+            <input
+              name="labels"
+              class="form-check-input"
+              type="checkbox"
+              value="UI Improvement"
+              id="ui-improvement"
+            />
+            <label class="form-check-label" for="ui-improvement">
+              UI Improvement </label>
+            
+          
+          </div>
+        </div>
+        <div class="row mb-3">
+          <label for="authorlabel" class="col-sm-4 col-form-label text-dark"
+            >Author</label
+          >
+          <div class="col-sm-8">
+            <input
+              type="text"
+              name="author"
+              placeholder="Author"
+              required
+              class="form-control"
+              id="authorlabel"
+            />
+          </div>
+        </div>
+
+        <div class="modal-footer bg-dark">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+          >
+            Close
+          </button>
+          <button type="submit" class="btn btn-danger">Create Issue</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
